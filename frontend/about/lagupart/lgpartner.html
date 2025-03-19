@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Your Language Partner</title>
+    <link rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Raleway", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #89cff0, #ffb6c1);
+        color: #333;
+      }
+
+      header {
+        background: rgba(255, 255, 255, 0.3);
+        color: #333;
+        text-align: center;
+        padding: 2rem 0;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .partner-list,
+      .tip-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .partner-option,
+      .tip-item {
+        width: 300px;
+        margin: 1rem;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+      }
+
+      .partner-option:hover,
+      .tip-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .partner-option a {
+        display: inline-block;
+        background: linear-gradient(to right, #ffb6c1, #89cff0);
+        color: #fff;
+        padding: 0.8rem 1.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: background 0.3s ease;
+      }
+
+      .partner-option a:hover {
+        background: linear-gradient(to right, #f8a8b5, #7ec4e8);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Find Your Language Partner</h1>
+    </header>
+
+    <section id="partner-options">
+      <div class="container">
+        <h2>Explore Your Options</h2>
+        <div class="partner-list">
+          <div class="partner-option" data-platform="tandem">
+            <h3>Tandem</h3>
+            <p>Connect with native speakers worldwide.</p>
+            <a href="https://www.tandem.net/" target="_blank">Visit Tandem</a>
+          </div>
+          <div class="partner-option" data-platform="hellotalk">
+            <h3>HelloTalk</h3>
+            <p>Language exchange with text, voice, and video.</p>
+            <a href="https://www.hellotalk.com/" target="_blank"
+              >Visit HelloTalk</a
+            >
+          </div>
+          <div class="partner-option" data-platform="speaky">
+            <h3>Speaky</h3>
+            <p>Find language partners from around the globe.</p>
+            <a href="https://www.speaky.com/" target="_blank">Visit Speaky</a>
+          </div>
+          <div class="partner-option" data-platform="italki">
+            <h3>italki</h3>
+            <p>Professional teachers and language partners.</p>
+            <a href="https://www.italki.com/" target="_blank">Visit italki</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="partner-tips">
+      <div class="container">
+        <h2>Tips for Effective Language Exchange</h2>
+        <div class="tip-list">
+          <div class="tip-item">
+            <h3>Set Clear Goals</h3>
+            <p>
+              Define your learning objectives and share them with your partner.
+            </p>
+          </div>
+          <div class="tip-item">
+            <h3>Practice Regularly</h3>
+            <p>Consistent practice leads to faster progress.</p>
+          </div>
+          <div class="tip-item">
+            <h3>Focus on Mutual Learning</h3>
+            <p>Help your partner learn your language too.</p>
+          </div>
+          <div class="tip-item">
+            <h3>Embrace Cultural Exchange</h3>
+            <p>Learn about different cultures through your partner.</p>
+          </div>
+          <div class="tip-item">
+            <h3>Provide Feedback</h3>
+            <p>Give and receive constructive feedback to improve.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

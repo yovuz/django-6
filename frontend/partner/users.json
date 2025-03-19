@@ -1,0 +1,87 @@
+[
+    {
+        "name": "John Doe",
+        "language": "English",
+        "interests": ["Movies", "Music", "Travel"],
+        "about": "I love learning new languages and meeting new people.",
+        "profile_picture": "john.jpg"
+    },
+    {
+        "name": "Jane Smith",
+        "language": "Spanish",
+        "interests": ["Reading", "Cooking", "Hiking"],
+        "about": "I'm passionate about Spanish culture and language.",
+        "profile_picture": "jane.jpg"
+    },
+    {
+        "name": "David Lee",
+        "language": "French",
+        "interests": ["Art", "Photography", "Cycling"],
+        "about": "I enjoy practicing French and exploring French art.",
+        "profile_picture": "david.jpg"
+    },
+    {
+        "name": "Maria Garcia",
+        "language": "German",
+        "interests": ["History", "Literature", "Chess"],
+        "about": "Interested in German history and literature.",
+        "profile_picture": "maria.jpg"
+    },
+    {
+        "name": "Kenji Tanaka",
+        "language": "Japanese",
+        "interests": ["Anime", "Manga", "Technology"],
+        "about": "Love Japanese culture and technology.",
+        "profile_picture": "kenji.jpg"
+    },
+    {
+        "name": "Elena Petrova",
+        "language": "Russian",
+        "interests": ["Ballet", "Classical Music", "Painting"],
+        "about": "Passionate about Russian arts.",
+        "profile_picture": "elena.jpg"
+    },
+    {
+        "name": "Ahmed Khan",
+        "language": "Arabic",
+        "interests": ["Calligraphy", "Poetry", "Travel"],
+        "about": "Exploring Arabic culture and literature.",
+        "profile_picture": "ahmed.jpg"
+    },
+    {
+        "name": "Sofia Rossi",
+        "language": "Italian",
+        "interests": ["Cooking", "Fashion", "Opera"],
+        "about": "Enjoying Italian cuisine and arts.",
+        "profile_picture": "sofia.jpg"
+    },
+    {
+        "name": "Kenji Tanaka",
+        "language": "Japanese",
+        "interests": ["Anime", "Manga", "Technology"],
+        "about": "Love Japanese culture and technology.",
+        "profile_picture": "kenji.jpg"
+    },
+    {
+        "name": "Elena Petrova",
+        "language": "Russian",
+        "interests": ["Ballet", "Classical Music", "Painting"],
+        "about": "Passionate about Russian arts.",
+        "profile_picture": "elena.jpg"
+    },
+    {
+        "name": "Ahmed Khan",
+        "language": "Arabic",
+        "interests": ["Calligraphy", "Poetry", "Travel"],
+        "about": "Exploring Arabic culture and literature.",
+        "profile_picture": "ahmed.jpg"
+    },
+    {
+        "name": "Sofia Rossi",
+        "language": "Italian",
+        "interests": ["Cooking", "Fashion", "Opera"],
+        "about": "Enjoying Italian cuisine and arts.",
+        "profile_picture": "sofia.jpg"
+    }
+    
+]

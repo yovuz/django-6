@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music and Language</title>
+    <link rel="stylesheet" href="" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(
+          135deg,
+          #89cff0,
+          #ffb6c1
+        );
+        background-attachment: fixed;
+        color: #333;
+      }
+
+      header {
+        background: rgba(255, 255, 255, 0.3);
+        color: #333;
+        text-align: center;
+        padding: 2rem 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      #music-list {
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+
+      .activity {
+        display: inline-block;
+        width: 320px;
+        margin: 1.5rem;
+        padding: 2rem;
+        background: rgba(
+          255,
+          255,
+          255,
+          0.8
+        );
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .activity:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .join-btn {
+        background: linear-gradient(
+          135deg,
+          #89cff0,
+          #ffb6c1
+        ); 
+        color: #fff;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .join-btn:hover {
+        background: linear-gradient(135deg, #7ec4e8, #f8a8b5);
+      }
+
+      #join-form {
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      form {
+        display: inline-block;
+        text-align: left;
+        width: 350px;
+      }
+
+      label {
+        display: block;
+        margin-top: 1.5rem;
+        color: #555;
+      }
+
+      input {
+        width: 100%;
+        padding: 0.8rem;
+        margin-top: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        box-sizing: border-box;
+        background: rgba(
+          255,
+          255,
+          255,
+          0.7
+        ); 
+      }
+
+      button[type="submit"] {
+        background: linear-gradient(
+          135deg,
+          #89cff0,
+          #ffb6c1
+        );
+        color: #fff;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 2rem;
+        transition: background 0.3s ease;
+      }
+
+      button[type="submit"]:hover {
+        background: linear-gradient(135deg, #7ec4e8, #f8a8b5);
+      }
+      button{
+    background: linear-gradient(135deg, #7ec4e8, #f8a8b5);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+    </style>
+  </head>
+  <body>
+    <header>
+        <a href="./index.html"><button>Home</button></a>
+      <h1>Music and Language</h1>
+      <p>Explore language learning through music!</p>
+    </header>
+
+    <section id="music-list">
+      <h2>Featured Music and Language Activities</h2>
+      <div class="activity">
+        <h3>French Song Analysis</h3>
+        <p>Language: French</p>
+        <p>Learn vocabulary and grammar through popular French songs.</p>
+        <button class="join-btn" data-activity="French Song Analysis">
+          Join
+        </button>
+      </div>
+      <div class="activity">
+        <h3>Spanish Lyric Translation</h3>
+        <p>Language: Spanish</p>
+        <p>Translate and analyze Spanish song lyrics for language practice.</p>
+        <button class="join-btn" data-activity="Spanish Lyric Translation">
+          Join
+        </button>
+      </div>
+      <div class="activity">
+        <h3>German Music Vocabulary</h3>
+        <p>Language: German</p>
+        <p>Expand your German vocabulary with popular German music.</p>
+        <button class="join-btn" data-activity="German Music Vocabulary">
+          Join
+        </button>
+      </div>
+    </section>
+
+    <section id="join-form" class="hidden">
+      <h2>Join Activity</h2>
+      <p>You are joining: <span id="selected-activity"></span></p>
+      <form id="registration-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <button type="submit">Register</button>
+      </form>
+    </section>
+
+    <script>
+      const joinButtons = document.querySelectorAll(".join-btn");
+      const joinForm = document.getElementById("join-form");
+      const selectedActivity = document.getElementById("selected-activity");
+      const registrationForm = document.getElementById("registration-form");
+
+      joinButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const activityName = button.getAttribute("data-activity");
+          selectedActivity.textContent = activityName;
+          joinForm.classList.remove("hidden");
+        });
+      });
+
+      registrationForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        alert("Registration successful!");
+        joinForm.classList.add("hidden");
+        registrationForm.reset();
+      });
+    </script>
+  </body>
+</html>

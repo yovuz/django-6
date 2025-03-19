@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(
+          to right,
+          #add8e6,
+          #ffb6c1 
+        );
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      #chat-container {
+        width: 30%;
+        height: 50vh;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #messages {
+        flex-grow: 1;
+        overflow-y: auto;
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .message-container {
+        display: flex;
+        justify-content: flex-end; 
+        align-items: flex-start; 
+        margin-bottom: 5px;
+      }
+
+      .message {
+        padding: 8px 12px;
+        border-radius: 18px;
+        display: inline-block;
+        max-width: 70%;
+        background-color: #dcf8c6; 
+        margin-right: 10px; 
+      }
+
+      .bot-message {
+        background-color: #f1f0f0; 
+      }
+
+      .profile-picture {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      #input-area {
+        display: flex;
+      }
+
+      #message-input {
+        flex-grow: 1;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-right: 5px;
+      }
+
+      #send-button {
+        padding: 8px 15px;
+        background: linear-gradient(
+          to right,
+          #add8e6,
+            #ffb6c1 
+        );
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      #send-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chat-container">
+      <div id="messages"></div>
+      <div id="input-area">
+        <input
+          type="text"
+          id="message-input"
+          placeholder="Enter your message"
+        />
+        <button id="send-button">Send</button>
+      </div>
+    </div>
+    <script>
+      const messagesDiv = document.getElementById("messages");
+      const messageInput = document.getElementById("message-input");
+      const sendButton = document.getElementById("send-button");
+
+      sendButton.addEventListener("click", sendMessage);
+      messageInput.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+          sendMessage();
+        }
+      });
+
+      function sendMessage() {
+        const messageText = messageInput.value.trim();
+        if (messageText) {
+
+          const userMessageContainer = document.createElement("div");
+          userMessageContainer.classList.add("message-container");
+
+          const userMessageDiv = document.createElement("div");
+          userMessageDiv.classList.add("message");
+          userMessageDiv.textContent = messageText;
+
+          const userProfilePicture = document.createElement("img");
+          userProfilePicture.classList.add("profile-picture");
+          userProfilePicture.src = "./../img/20250122_195901.jpg";
+          userProfilePicture.alt = "Profile Picture";
+          userProfilePicture.addEventListener("click", () => {
+            openProfile();
+          });
+
+          userMessageContainer.appendChild(userMessageDiv);
+          userMessageContainer.appendChild(userProfilePicture);
+          messagesDiv.appendChild(userMessageContainer);
+
+
+          let botResponse = "";
+          if (messageText.toLowerCase() === "hello") {
+            botResponse = "How are you?";
+          } else if (messageText.toLowerCase() === "salam") {
+            botResponse = "salam, gowymy";
+          } else {
+            botResponse = "I don't understand";
+          }
+
+          if (botResponse) {
+            const botMessageContainer = document.createElement("div");
+            botMessageContainer.classList.add("message-container");
+            botMessageContainer.style.justifyContent = "flex-start"; 
+
+            const botMessageDiv = document.createElement("div");
+            botMessageDiv.classList.add("message", "bot-message");
+            botMessageDiv.textContent = botResponse;
+
+            const botProfilePicture = document.createElement("img");
+            botProfilePicture.classList.add("profile-picture");
+            botProfilePicture.src = "./../img/bot-profile.jpg";
+            botProfilePicture.alt = "Bot Profile Picture";
+
+            botMessageContainer.appendChild(botProfilePicture);
+            botMessageContainer.appendChild(botMessageDiv);
+            messagesDiv.appendChild(botMessageContainer);
+          }
+
+          messageInput.value = "";
+          scrollMessagesToBottom();
+        }
+      }
+
+      function openProfile() {
+
+        alert("Profile opened!");
+      }
+
+      function scrollMessagesToBottom() {
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+      }
+    </script>
+  </body>
+</html>
